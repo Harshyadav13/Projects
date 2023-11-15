@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dijkstra Algorithm</title>
+</head>
+<body>
+    <h1>Dijkstra Algorithm</h1>
+    <form action="/calculate" method="post">
+        <label for="start">Start Vertex:</label>
+        <select name="start" id="start" th:each="vertex : ${vertices}">
+            <option th:value="${vertex}" th:text="${vertex}"></option>
+        </select>
+        <br>
+        <label for="end">End Vertex:</label>
+        <select name="end" id="end" th:each="vertex : ${vertices}">
+            <option th:value="${vertex}" th:text="${vertex}"></option>
+        </select>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
